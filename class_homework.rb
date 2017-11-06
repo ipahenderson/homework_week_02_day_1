@@ -13,6 +13,9 @@ class Student
     return "I am #{@name} of Cohort #{@cohort}, I can talk!"
   end
 
+  def fave_language(value)
+    return "#{@name} loves #{value}!"
+  end
 
 
 

@@ -33,4 +33,10 @@ class TestClassHomework < MiniTest::Test
     assert_equal("I am Ian of Cohort 17, I can talk!", student.talk)
   end
 
+  def test_favorite_language
+    student = Student.new("Ian", 17)
+    favourite = student.fave_language("Ruby")
+    assert_equal("Ian loves Ruby!", favourite)
+  end
+
 end
