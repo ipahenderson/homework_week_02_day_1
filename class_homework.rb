@@ -73,8 +73,14 @@ class Library
 
 
 
-  def list_books(books)
-    return books
+  def list_books
+    return @books
+  end
+
+  def list_target_book(books, title)
+    for book in books
+      return book if book[:title] == title
+    end
   end
 
 

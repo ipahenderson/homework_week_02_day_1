@@ -115,7 +115,13 @@ class TestClassHomework < MiniTest::Test
   # Extension
 
   def test_list_books
-  assert_equal(@books, @library.list_books(@books))
+  assert_equal(@books, @library.list_books)
+  end
+
+  def test_list_book_details
+    book = @books[1]
+    title = "fight_club"
+    assert_equal(@library.list_target_book(@books,title), book)
   end
 
 
