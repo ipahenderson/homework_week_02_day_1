@@ -101,13 +101,13 @@ class Library
     books << new_books
   end
 
-  # def rental_ammend(books, title, new_rental)
-  #   for book in books
-  #     if book[:title] == title
-  #     book[:rental_details][:student_name] = new_rental[:student_name]
-  #     book[:rental_details][:date] = new_rental[:return_date]
-  #     end
-  #   end
-  # end
+  def rental_ammend(books, title, new_rental)
+    for book in books
+      if book[:title] == title
+      book[:rental_details][:student_name] = new_rental[:student_name]
+      book[:rental_details][:date] = new_rental[:date]
+      end
+    end
+  end
 
 end
