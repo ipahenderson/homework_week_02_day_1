@@ -55,10 +55,27 @@ class SportsTeam
   end
 
   def points(result)
-    @points += 1 if reault = "win"
+    @points += 1 if result == "win"
   end
 
 
 end
 
-#Extension
+# Extension
+
+class Library
+
+  attr_accessor :books
+
+  def initialize(input_books)
+    @books = input_books
+  end
+
+
+
+  def list_books(books)
+    return books
+  end
+
+
+end

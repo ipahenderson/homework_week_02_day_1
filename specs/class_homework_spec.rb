@@ -4,11 +4,47 @@ require_relative('../class_homework.rb')
 
 class TestClassHomework < MiniTest::Test
 
-  # PART A
 
   def setup
     @student = Student.new("Ian", 17)
+    @team = SportsTeam.new("NY Giants",
+      ["Eli Manning","Odell Beckham Jr.",
+        "Brandon Marshall", "Aldrick Rosas"],
+       "Ben McAdoo")
+    @books = [
+           {
+             title: "lord_of_the_rings",
+             rental_details: {
+               student_name: "Jeff",
+               date: "01/12/16"
+             },
+           },
+           {
+             title: "fight_club",
+             rental_details: {
+               student_name: "Matt",
+               date: "12/08/14"
+             }
+           },
+           {
+             title: "bleak_house",
+             rental_details: {
+               student_name: "Ian",
+               date: "15/11/16"
+             }
+           },
+           {
+             title: "war_and_peace",
+             rental_details: {
+               student_name: "Upul",
+               date: "16/01/12"
+             }
+           }
+         ]
+    @library = Library.new(@books)
   end
+  # PART A
+
 
   def test_student_name
     @student
@@ -41,46 +77,46 @@ class TestClassHomework < MiniTest::Test
   end
 
 
+
   # PART B
   def test_team_name
-    team = SportsTeam.new("NY Giants", ["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], "Ben McAdoo")
-    assert_equal("NY Giants", team.team_name)
+    assert_equal("NY Giants", @team.team_name)
   end
 
   def test_players
-    team = SportsTeam.new("NY Giants", ["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], "Ben McAdoo")
-    assert_equal(["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], team.players)
+    assert_equal(["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], @team.players)
   end
 
   def test_coach_name
-    team = SportsTeam.new("NY Giants", ["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], "Ben McAdoo")
-    assert_equal("Ben McAdoo", team.coach)
+    assert_equal("Ben McAdoo", @team.coach)
   end
 
   def test_coach_change
-    team = SportsTeam.new("NY Giants", ["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], "Ben McAdoo")
-    team.coach = "Coach Carter"
-    assert_equal("Coach Carter", team.coach)
+    @team.coach = "Coach Carter"
+    assert_equal("Coach Carter", @team.coach)
   end
 
   def test_add_player
-    team = SportsTeam.new("NY Giants", ["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], "Ben McAdoo")
-    team.add_player("Ian Henderson")
-    assert_equal(["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas", "Ian Henderson"] , team.players)
+    @team.add_player("Ian Henderson")
+    assert_equal(["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas", "Ian Henderson"] , @team.players)
   end
 
   def test_player__found
-    team = SportsTeam.new("NY Giants", ["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], "Ben McAdoo")
-    result = team.find_player("Eli Manning")
+    result = @team.find_player("Eli Manning")
     assert_equal("Player Eli Manning Found!", result)
   end
 
   def test_points
-    team = SportsTeam.new("NY Giants", ["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], "Ben McAdoo")
-    result = team.points("win")
+    result = @team.points("win")
     assert_equal(1, result)
   end
 
-end
 
   # Extension
+
+  def test_list_books
+  assert_equal(@books, @library.list_books(@books))
+  end
+
+
+end
