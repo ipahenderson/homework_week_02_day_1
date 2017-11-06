@@ -7,9 +7,10 @@ class TestClassHomework < MiniTest::Test
 
   def setup
     @student = Student.new("Ian", 17)
+    @players = ["Eli Manning", "Odell Beckham Jr.",
+       "Brandon Marshall", "Aldrick Rosas"]
     @team = SportsTeam.new("NY Giants",
-      ["Eli Manning","Odell Beckham Jr.",
-        "Brandon Marshall", "Aldrick Rosas"],
+      @players,
        "Ben McAdoo")
     @books = [
            {
@@ -84,7 +85,7 @@ class TestClassHomework < MiniTest::Test
   end
 
   def test_players
-    assert_equal(["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], @team.players)
+    assert_equal(@players, @team.players)
   end
 
   def test_coach_name
@@ -144,7 +145,6 @@ class TestClassHomework < MiniTest::Test
 
   def test_change_rental
     title = 'fight_club'
-    book = @books[1]
     student = "Paul"
     return_date = "12/01/18"
     new_rental = {

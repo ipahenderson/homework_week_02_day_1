@@ -104,8 +104,7 @@ class Library
   def rental_ammend(books, title, new_rental)
     for book in books
       if book[:title] == title
-      book[:rental_details][:student_name] = new_rental[:student_name]
-      book[:rental_details][:date] = new_rental[:date]
+      book[:rental_details] = new_rental
       end
     end
   end
