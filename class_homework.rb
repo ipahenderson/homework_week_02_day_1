@@ -52,6 +52,7 @@ class SportsTeam
     for player in @players
       return "Player #{name} Found!" if player == name
     end
+    return "Player #{name} Not Found!"
   end
 
   def points(result)

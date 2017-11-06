@@ -107,6 +107,11 @@ class TestClassHomework < MiniTest::Test
     assert_equal("Player Eli Manning Found!", result)
   end
 
+  def test_player__not_found
+    result = @team.find_player("Baby Legs")
+    assert_equal("Player Baby Legs Not Found!", result)
+  end
+
   def test_points
     result = @team.points("win")
     assert_equal(1, result)
