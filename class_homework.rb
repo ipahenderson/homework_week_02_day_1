@@ -17,6 +17,28 @@ class Student
     return "#{@name} loves #{value}!"
   end
 
+end
+
+#Part B
+
+class SportsTeam
+  attr_reader :team_name, :players
+  attr_accessor :coach
+
+  def initialize(input_name, input_players, input_coach)
+    @team_name = input_name
+    @players = input_players
+    @coach = input_coach
+    @points = 0
+  end
+
+  def team_name
+    return @team_name
+  end
+
+  def players
+    return @players
+  end
 
 
 

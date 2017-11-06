@@ -39,4 +39,22 @@ class TestClassHomework < MiniTest::Test
     assert_equal("Ian loves Ruby!", favourite)
   end
 
+
+  # PART B
+  def test_team_name
+    team = SportsTeam.new("NY Giants", ["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], "Ben McAdoo")
+    assert_equal("NY Giants", team.team_name)
+  end
+
+  def test_players
+    team = SportsTeam.new("NY Giants", ["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], "Ben McAdoo")
+    assert_equal(["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], team.players)
+  end
+
+
+
+
+
+
+
 end
