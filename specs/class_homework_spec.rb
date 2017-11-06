@@ -130,5 +130,27 @@ class TestClassHomework < MiniTest::Test
     assert_equal(@library.rental_details(@books,title), book)
   end
 
+  def test_add_book
+    title = "oliver_twist"
+    new_book =   {
+    title: "oliver_twist",
+    rental_details: {
+     student_name: "",
+     date: ""
+    }
+  }
+    assert_equal(@library.add_book(@books,title), @books)
+  end
 
+  # def test_change_rental
+  #   title = 'fight_club'
+  #   book = @books[1][:rental_details]
+  #   student = "Paul"
+  #   return_date = "12/01/18"
+  #   new_rental = {
+  #    student_name: student,
+  #    date: return_date
+  #   }
+  #   assert_equal(@library.rental_ammend(@books,title, new_rental), book)
+  # end
 end
