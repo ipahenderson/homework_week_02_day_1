@@ -57,7 +57,11 @@ class TestClassHomework < MiniTest::Test
     assert_equal("Coach Carter", team.coach)
   end
 
-
+  def test_check_player
+    team = SportsTeam.new("NY Giants", ["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], "Ben McAdoo")
+    result = team.find_player("Eli Manning")
+    assert_equal("Player Eli Manning Found!", result)
+  end
 
 
 
