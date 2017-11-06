@@ -51,6 +51,11 @@ class TestClassHomework < MiniTest::Test
     assert_equal(["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], team.players)
   end
 
+  def test_coach_name
+    team = SportsTeam.new("NY Giants", ["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], "Ben McAdoo")
+    assert_equal("Ben McAdoo", team.coach)
+  end
+
   def test_coach_change
     team = SportsTeam.new("NY Giants", ["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], "Ben McAdoo")
     team.coach = "Coach Carter"
@@ -69,7 +74,14 @@ class TestClassHomework < MiniTest::Test
     assert_equal("Player Eli Manning Found!", result)
   end
 
-
-
+  def test_points
+    team = SportsTeam.new("NY Giants", ["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], "Ben McAdoo")
+    result = team.points("win")
+    assert_equal(1, result)
+  end
 
 end
+
+  # Extension
+
+  

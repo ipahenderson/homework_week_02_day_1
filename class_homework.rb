@@ -54,4 +54,11 @@ class SportsTeam
     end
   end
 
+  def points(result)
+    @points += 1 if reault = "win"
+  end
+
+
 end
+
+#Extension
