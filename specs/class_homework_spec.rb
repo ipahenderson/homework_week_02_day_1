@@ -6,36 +6,37 @@ class TestClassHomework < MiniTest::Test
 
   # PART A
 
+  def setup
+    @student = Student.new("Ian", 17)
+  end
+
   def test_student_name
-    student = Student.new("Ian", 17)
-    assert_equal("Ian", student.name)
+    @student
+    assert_equal("Ian", @student.name)
   end
 
   def test_cohort
-    student = Student.new("Ian", 17)
-    assert_equal(17, student.cohort)
+    @student
+    assert_equal(17, @student.cohort)
   end
 
   def test_set_student_name
-    student = Student.new("Ian", 17)
-    student.name = "Joe"
-    assert_equal("Joe", student.name)
+    @student.name = "Joe"
+    assert_equal("Joe", @student.name)
   end
 
   def test_set_cohort
-    student = Student.new("Ian", 17)
-    student.cohort = 18
-    assert_equal(18 , student.cohort)
+    @student.cohort = 18
+    assert_equal(18 , @student.cohort)
   end
 
   def test_student_talk
-    student = Student.new("Ian", 17)
-    assert_equal("I am Ian of Cohort 17, I can talk!", student.talk)
+    assert_equal("I am Ian of Cohort 17, I can talk!", @student.talk)
   end
 
   def test_favorite_language
-    student = Student.new("Ian", 17)
-    favourite = student.fave_language("Ruby")
+    @student
+    favourite = @student.fave_language("Ruby")
     assert_equal("Ian loves Ruby!", favourite)
   end
 
@@ -68,7 +69,7 @@ class TestClassHomework < MiniTest::Test
     assert_equal(["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas", "Ian Henderson"] , team.players)
   end
 
-  def test_check_player
+  def test_player__found
     team = SportsTeam.new("NY Giants", ["Eli Manning", "Odell Beckham Jr.", "Brandon Marshall", "Aldrick Rosas"], "Ben McAdoo")
     result = team.find_player("Eli Manning")
     assert_equal("Player Eli Manning Found!", result)
@@ -83,5 +84,3 @@ class TestClassHomework < MiniTest::Test
 end
 
   # Extension
-
-  
