@@ -44,6 +44,10 @@ class SportsTeam
     return @coach
   end
 
+  def add_player(name)
+    @players.push(name)
+  end
+
   def find_player(name)
     for player in @players
       return "Player #{name} Found!" if player == name
