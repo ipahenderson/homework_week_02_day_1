@@ -9,6 +9,9 @@ class Student
     @cohort = input_cohort
   end
 
+  def talk
+    return "I am #{@name} of Cohort #{@cohort}, I can talk!"
+  end
 
 
 
